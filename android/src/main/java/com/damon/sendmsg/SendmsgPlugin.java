@@ -41,7 +41,14 @@ public class SendmsgPlugin implements FlutterPlugin, MethodCallHandler, Activity
         Map<String,Object> arg = (Map<String, Object>)call.arguments;
         String phone = (String)arg.get("phone");
         String msg = (String)arg.get("msg");
-        sendMsg.sendMessage(activity,result,phone,msg);
+        int slotIndex = 0;
+
+        Object exist=  arg.get("slotIndex");
+        if(exist!=null){
+          slotIndex = (int) exist;
+        }
+
+        sendMsg.sendMessage(activity,result,phone,msg,slotIndex);
     }else if(call.method.equals("sendMsgSingle")){
       Map<String,Object> arg = (Map<String, Object>)call.arguments;
       String phone = (String)arg.get("phone");

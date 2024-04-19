@@ -83,7 +83,7 @@ public class SendMsg {
         }
     }
 
-    public void sendMessage(Activity activity, MethodChannel.Result result,String phone,String msg) {
+    public void sendMessage(Activity activity, MethodChannel.Result result,String phone,String msg,int slotIndex) {
        try {
            // Obtener una instancia de SubscriptionManager
 
@@ -113,7 +113,7 @@ public class SendMsg {
                // Verificar si hay información de tarjeta SIM disponible
                if (subscriptionInfoList != null && !subscriptionInfoList.isEmpty()) {
                    // Obtener la información de la primera tarjeta SIM
-                   SubscriptionInfo subscriptionInfo = subscriptionInfoList.get(0);
+                   SubscriptionInfo subscriptionInfo = subscriptionInfoList.get(slotIndex);
 
                    // Obtener el id de la tarjeta SIM seleccionada
                    int subscriptionId = 0;

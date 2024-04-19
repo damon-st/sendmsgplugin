@@ -12,8 +12,10 @@ class Sendmsg {
   Future<bool?> sendMsg({
     required String phone,
     required String msg,
+    int slotIndex = 0,
   }) =>
-      SendmsgPlatform.instance.sendMsg(phone: phone, msg: msg);
+      SendmsgPlatform.instance
+          .sendMsg(phone: phone, msg: msg, slotIndex: slotIndex);
   Future<bool?> sendMsgSingle({
     required String phone,
     required String msg,

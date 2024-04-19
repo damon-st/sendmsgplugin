@@ -24,9 +24,13 @@ class MethodChannelSendmsg extends SendmsgPlatform {
   }
 
   @override
-  Future<bool?> sendMsg({required String phone, required String msg}) async {
-    final result = await methodChannel
-        .invokeMethod<bool>("sendMsg", {"phone": phone, "msg": msg});
+  Future<bool?> sendMsg({
+    required String phone,
+    required String msg,
+    int slotIndex = 0,
+  }) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        "sendMsg", {"phone": phone, "msg": msg, "slotIndex": slotIndex});
     return result;
   }
 

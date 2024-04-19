@@ -35,6 +35,7 @@ abstract class SendmsgPlatform extends PlatformInterface {
   Future<bool?> sendMsg({
     required String phone,
     required String msg,
+    int slotIndex = 0,
   }) {
     throw UnimplementedError('sendMsg() has not been implemented.');
   }
