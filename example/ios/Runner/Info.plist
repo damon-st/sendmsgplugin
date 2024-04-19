@@ -45,5 +45,8 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSMessagesUsageDescription</key>
+	<string>Se requiere acceso a los mensajes para enviar SMS desde la aplicación.</string>
+
 </dict>
 </plist>

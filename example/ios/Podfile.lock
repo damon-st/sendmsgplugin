@@ -1,0 +1,28 @@
+PODS:
+  - Flutter (1.0.0)
+  - integration_test (0.0.1):
+    - Flutter
+  - sendmsg (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+  - sendmsg (from `.symlinks/plugins/sendmsg/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+  sendmsg:
+    :path: ".symlinks/plugins/sendmsg/ios"
+
+SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  integration_test: 13825b8a9334a850581300559b8839134b124670
+  sendmsg: fb491481e90fed1044de5825baaf77419bd1f709
+
+PODFILE CHECKSUM: c798208781ca5116c4a3d5927d689946791f0189
+
+COCOAPODS: 1.15.2
