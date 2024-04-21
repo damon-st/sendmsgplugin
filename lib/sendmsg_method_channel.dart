@@ -54,4 +54,15 @@ class MethodChannelSendmsg extends SendmsgPlatform {
       return [];
     }
   }
+
+  @override
+  Future<bool> checkStatusPermission() async {
+    try {
+      final r = await methodChannel.invokeMethod<bool>("checkStatusPermission");
+      return r ?? false;
+    } catch (e) {
+      debugPrint("[ERROR_checkStatusPermission]");
+      return false;
+    }
+  }
 }

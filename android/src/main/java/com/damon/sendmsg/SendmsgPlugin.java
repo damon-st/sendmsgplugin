@@ -56,6 +56,8 @@ public class SendmsgPlugin implements FlutterPlugin, MethodCallHandler, Activity
       sendMsg.sendMsgSingleSim(result,activity,phone,msg);
     }else if(call.method.equals("getAllSims")){
       sendMsg.getAllSims(activity,result);
+    }else if(call.method.equals("checkStatusPermission")){
+      requestPermisionMSG.onCheckStatusPermission(result);
     }
     else {
       result.notImplemented();
@@ -70,6 +72,7 @@ public class SendmsgPlugin implements FlutterPlugin, MethodCallHandler, Activity
   @Override
   public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
     activity = binding.getActivity();
+    requestPermisionMSG.setActivity(activity);
   }
 
   @Override
@@ -80,6 +83,7 @@ public class SendmsgPlugin implements FlutterPlugin, MethodCallHandler, Activity
   @Override
   public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
   activity = binding.getActivity();
+    requestPermisionMSG.setActivity(activity);
   }
 
   @Override

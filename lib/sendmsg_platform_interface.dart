@@ -28,10 +28,15 @@ abstract class SendmsgPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
+  ///Request permisison in Android SendMSG and ReadPhoneState AND iOS Info.plist
+  ///<key>NSMessagesUsageDescription</key>
+  ///<string>This app required permission for funcionality</string>
+
   Future<bool?> requestPermision() {
     throw UnimplementedError('requestPermision() has not been implemented.');
   }
 
+  ///Send Message using SmsManager in Android and Ios using MFMessageComposeViewController
   Future<bool?> sendMsg({
     required String phone,
     required String msg,
@@ -40,6 +45,7 @@ abstract class SendmsgPlatform extends PlatformInterface {
     throw UnimplementedError('sendMsg() has not been implemented.');
   }
 
+  ///Send Message using SmsManager in Android and Ios using MFMessageComposeViewController
   Future<bool?> sendMsgSingle({
     required String phone,
     required String msg,
@@ -47,7 +53,15 @@ abstract class SendmsgPlatform extends PlatformInterface {
     throw UnimplementedError('sendMsgSingle() has not been implemented.');
   }
 
+  ///Get all information for sim in android and IOS using CoreTelephony not equal information
+  ///in iOS because, protection data in iOS
   Future<List<SimInfoM>> getAllSims() {
     throw UnimplementedError('getAllSims() has not been implemented.');
+  }
+
+  ///Return in status permissions all Granted
+  Future<bool> checkStatusPermission() {
+    throw UnimplementedError(
+        'checkStatusPermission() has not been implemented.');
   }
 }

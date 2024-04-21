@@ -24,6 +24,7 @@ class _MyAppState extends State<MyApp> {
   String msg = "";
   bool sending = false;
   List sims = [];
+  String statusPemrision = "";
   @override
   void initState() {
     super.initState();
@@ -116,6 +117,16 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
+  void checkStatusPermission() async {
+    try {
+      final r = await _sendmsgPlugin.checkStatusPermission();
+      statusPemrision = r ? "Permission GRANTED" : "PERMISIONS DENAIDED";
+      setState(() {});
+    } catch (e) {
+      debugPrint("[ERROR_checkStatusPermission]$e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -151,6 +162,10 @@ class _MyAppState extends State<MyApp> {
             ),
             ElevatedButton(onPressed: onSendMsgSingle, child: Text("Send msg")),
             ElevatedButton(onPressed: getAllSims, child: Text("Get all sims")),
+            ElevatedButton(
+              onPressed: checkStatusPermission,
+              child: Text("Check StatusPermission $statusPemrision"),
+            ),
             Expanded(
                 child: ListView.builder(
               itemCount: sims.length,

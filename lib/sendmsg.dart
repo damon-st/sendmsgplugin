@@ -23,4 +23,7 @@ class Sendmsg {
       SendmsgPlatform.instance.sendMsgSingle(phone: phone, msg: msg);
 
   Future<List<SimInfoM>> getAllSims() => SendmsgPlatform.instance.getAllSims();
+
+  Future<bool> checkStatusPermission() =>
+      SendmsgPlatform.instance.checkStatusPermission();
 }
